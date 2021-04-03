@@ -88,7 +88,36 @@ const winningArrays = [
     [12, 19, 26, 33],
     [13, 20, 27, 34],
   ]
+function checkBoard(){
+    for (let t=0; t<winningArrays.length; t++){
+        const square1 = squares[winningArrays[t][0]];
+        const square2 = squares[winningArrays[t][1]];
+        const square3 = squares[winningArrays[t][2]];
+        const square4 = squares[winningArrays[t][3]];
 
+           //check those squares to see if they all have the class of player-one
+      if (
+        square1.classList.contains('player-one') &&
+        square2.classList.contains('player-one') &&
+        square3.classList.contains('player-one') &&
+        square4.classList.contains('player-one')
+      )
+      {
+        result.innerHTML = 'Player One Wins!'
+      }
+      //check those squares to see if they all have the class of player-two
+      if (
+        square1.classList.contains('player-two') &&
+        square2.classList.contains('player-two') &&
+        square3.classList.contains('player-two') &&
+        square4.classList.contains('player-two')
+      )
+      {
+        result.innerHTML = 'Player Two Wins!'
+      }
+
+    }
+}
 
 let displayCurrentPlayer= document.getElementById('current-player');
 const squares= document.querySelectorAll('.container div');
@@ -109,6 +138,7 @@ for (let i=0; i<squares.length; i++) {
             currentPlayer = 1;
             displayCurrentPlayer.innerHTML=currentPlayer;
         }   
-     }
+     }else alert('cant go here')
+     checkBoard()
   };
 }
