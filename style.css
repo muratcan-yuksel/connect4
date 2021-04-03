@@ -1,0 +1,16 @@
+.container{
+    height:120px;
+    width:160px;
+    display:flex;
+    flex-wrap:wrap;
+
+}
+
+.container div{
+    width:20px;
+    height:20px;
+    border:1px solid black;
+}
+.taken{
+    background:black;
+}
